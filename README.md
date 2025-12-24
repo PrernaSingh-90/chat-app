@@ -19,6 +19,7 @@ This project demonstrates real-world frontend concepts like component-based arch
 - Reusable React components
 - Proper folder structure
 
+
 ---
 
 ## 🛠️ Tech Stack
