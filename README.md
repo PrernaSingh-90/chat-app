@@ -38,8 +38,8 @@ This project demonstrates real-world frontend concepts like component-based arch
 ### Chat Screen
 ![Chat Screen](screenshots/chat-screen.png)
 
-### Send Message
-![Send Message](screenshots/home.png)
+### Home
+![Home](screenshots/home.png)
 
 ---
 
