@@ -44,6 +44,12 @@ This project demonstrates real-world frontend concepts like component-based arch
 
 ---
 
+##How to Run Locally
+
+Clone the repository git clone https://github.com/PrernaSingh-90/chat-app.git
+Install dependencies npm install
+Start the project npm run dev
+
 📚 What I Learned
 
 - Building UI using reusable React components
