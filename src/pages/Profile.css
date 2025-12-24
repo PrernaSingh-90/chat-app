@@ -1,0 +1,285 @@
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* Header Section */
+.profile-header {
+  background: var(--card-bg);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cover-photo {
+  height: 150px;
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+}
+
+.profile-info-wrapper {
+  padding: 0 20px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: -50px; /* Avatar ko upar cover ke upar lane ke liye */
+}
+
+.profile-img-container {
+  display: inline-block;
+  padding: 5px;
+  background: white;
+  border-radius: 50%;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid var(--card-bg); /* White border */
+  object-fit: cover;
+  background: white;
+}
+
+.profile-text {
+  padding: 10px 20px;
+}
+
+.profile-text h1 {
+  margin: 10px 0 5px;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.bio {
+  color: #65676b;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.status-badge.online {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.status-badge.offline {
+  color: #95a5a6;
+}
+
+.edit-btn {
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  background: #f0f2f5;
+  color: var(--text-color);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.edit-btn:hover {
+  background: #dcdcdc;
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  color: var(--text-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content h3 {
+  margin: 0;
+  text-align: center;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.avatar-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.avatar-options img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.avatar-options img:hover {
+  transform: scale(1.1);
+}
+
+.avatar-options img.selected {
+  border-color: #1877f2;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(24, 119, 242, 0.5);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 5px;
+}
+.save-btn {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cancel-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Posts Grid */
+/* .my-posts-section {
+  padding: 0 20px;
+} */
+.my-posts-section h3 {
+  padding-left: 10px;
+  border-left: 4px solid #1877f2;
+  margin-bottom: 20px;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Responsive Grid */
+  gap: 15px;
+}
+
+.profile-post-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-top .date {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.post-text {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+.card-bottom {
+  font-size: 0.85rem;
+  color: #555;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+}
+
+/* Dark Modes Fixes */
+body.dark .profile-header,
+body.dark .modal-content,
+body.dark .profile-post-card {
+  background: #242526;
+  color: white;
+}
+body.dark .profile-text h1,
+body.dark .modal-content h3 {
+  color: white;
+}
+body.dark .bio,
+body.dark .stats,
+body.dark .post-text {
+  color: #ccc;
+}
+body.dark .form-group input {
+  background: #3a3b3c;
+  color: white;
+  border-color: #555;
+}
+body.dark .avatar-options {
+  background: #3a3b3c;
+}

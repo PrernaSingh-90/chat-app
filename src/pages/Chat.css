@@ -1,0 +1,318 @@
+.chat-layout {
+  display: flex;
+  height: calc(100vh - 60px); /* Adjust based on navbar height */
+  background: #fff;
+  overflow: hidden;
+}
+
+/* --- SIDEBAR STYLES --- */
+.chat-sidebar {
+  width: 320px;
+  border-right: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  background: #f7f7f7;
+}
+.users-list {
+  overflow-y: auto;
+  flex: 1;
+}
+.user-row {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+.user-row:hover,
+.user-row.active {
+  background: #eef3f8;
+}
+.user-row img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+.user-details .name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: block;
+}
+.user-details .status {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status.online {
+  color: #2ecc71;
+}
+
+.status.offline {
+  color: #95a5a6;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-info h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.typing-status {
+  font-size: 0.8rem;
+  color: #2ecc71;
+  font-weight: bold;
+  font-style: italic;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.header-status {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.delete-icon {
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 5px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+/* --- MAIN CHAT AREA (Flex Column is Key here) --- */
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  background: #e5ddd5; /* WhatsApp-like background color */
+  position: relative;
+  height: 100%;
+}
+
+.delete-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 1. HEADER */
+.chat-header {
+  padding: 10px 20px;
+  background: #f0f2f5;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  flex-shrink: 0; /* Don't shrink header */
+}
+.chat-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.back-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* 2. MESSAGES (Takes remaining space) */
+.messages-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* No padding-bottom needed now */
+}
+
+.msg-bubble {
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 70%;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  line-height: 1.4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.msg-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.msg-wrapper.sent {
+  flex-direction: row-reverse;
+} 
+/* Right align */
+.msg-wrapper.received {
+  flex-direction: row;
+}
+ /* Left align */
+
+.delete-icon {
+  cursor: pointer;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: 0.2s;
+}
+.msg-wrapper:hover .delete-icon {
+  opacity: 1;
+} /* Hover karne par dikhega */
+
+.sent {
+  align-self: flex-end;
+  background: #d9fdd3;
+  color: black;
+}
+ /* WhatsApp green */
+.received {
+  align-self: flex-start;
+  background: white;
+  color: black;
+}
+
+/* 3. INPUT AREA (Fixed at bottom naturally) */
+.input-area-wrapper {
+  background: #ffffff;
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+  flex-shrink: 0; /* यह एरिया सिकुड़ेगा नहीं */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-area {
+  display: flex !important; /* Flexbox को फोर्स करें */
+  flex-direction: row !important; /* एक लाइन में लाएं */
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.input-area input {
+  flex-grow: 1 !important; /* बची हुई सारी जगह ये लेगा */
+  width: auto !important; /* 100% width को रोकें */
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  background: #f0f2f5; /* हल्का ग्रे कलर ताकि साफ दिखे */
+  color: #000;
+  height: 45px; /* ऊँचाई फिक्स करें */
+}
+
+.input-area button {
+  width: auto !important; /* बटन को फैलने से रोकें */
+  flex-shrink: 0; /* बटन को पिचकने से रोकें */
+  padding: 0 25px;
+  height: 45px; /* इनपुट के बराबर ऊँचाई */
+  background: #008069;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-area button:hover {
+  background: #006a57;
+}
+
+.empty-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .chat-layout {
+    position: relative;
+  }
+  .chat-sidebar {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+  }
+  .chat-sidebar.hide {
+    transform: translateX(-100%);
+  }
+  .chat-sidebar.show {
+    transform: translateX(0);
+  }
+
+  .chat-main {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+  }
+  .back-btn {
+    display: block;
+  }
+}
+
+/* Dark Mode Support */
+body.dark .chat-layout,
+body.dark .chat-sidebar,
+body.dark .sidebar-header,
+body.dark .chat-header,
+body.dark .input-area-wrapper {
+  background: #202c33;
+  color: white;
+  border-color: #2f3b43;
+}
+body.dark .user-row:hover {
+  background: #2a3942;
+}
+body.dark .chat-main {
+  background: #0b141a;
+}
+body.dark .received {
+  background: #202c33;
+  color: white;
+}
+body.dark .sent {
+  background: #005c4b;
+  color: white;
+}
+body.dark .input-area input {
+  background: #2a3942;
+  color: white;
+  border: none;
+}

@@ -1,0 +1,26 @@
+:root {
+  --bg-color: #f0f2f5;
+  --card-bg: #ffffff;
+  --text-color: #050505;
+  --nav-bg: #1877f2;
+  --input-bg: #ffffff;
+}
+
+/* Dark Mode Variables */
+body.dark {
+  --bg-color: #18191a;
+  --card-bg: #242526;
+  --text-color: #e4e6eb;
+  --nav-bg: #242526;
+  --input-bg: #3a3b3c;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+* { box-sizing: border-box; }
