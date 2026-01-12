@@ -1,0 +1,57 @@
+.chat-sidebar {
+  width: 300px;
+  background: var(--card-bg);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.sidebar-header {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: bold;
+  color: var(--text-color);
+}
+.users-list {
+  flex: 1;
+  overflow-y: auto;
+}
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-bottom: 1px solid var(--border-color);
+}
+.sidebar-user:hover,
+.sidebar-user.active {
+  background-color: var(--bg-color);
+}
+.sidebar-user img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-details h4 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+  color: var(--text-color);
+}
+.status-dot {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+.status-dot.online {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .chat-sidebar {
+    width: 100%;
+    display: none;
+  } 
+}

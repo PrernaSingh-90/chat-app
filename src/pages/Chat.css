@@ -1,0 +1,353 @@
+.chat-container {
+  display: flex;
+  height: calc(100vh - 60px);
+  background-color: var(--card-bg);
+  overflow: hidden;
+  position: fixed;
+  top: 60px;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+.chat-sidebar {
+  width: 350px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  height: 100%;
+  z-index: 5;
+}
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  height: 100%;
+  position: relative;
+}
+
+.sidebar-header {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.users-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.user-item:hover,
+.user-item.active {
+  background-color: var(--bg-color);
+}
+
+.avatar-wrapper {
+  position: relative;
+  margin-right: 12px;
+}
+.avatar-wrapper img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.online-dot {
+  position: absolute;
+  bottom: 5px;
+  right: 3px;
+  width: 10px;
+  height: 10px;
+  background: #2ecc71;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.user-details h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+.user-details p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.header-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.chat-header {
+  padding: 10px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+  justify-content: flex-start;
+}
+
+.chat-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.header-text h4 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.back-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  margin-right: 5px;
+}
+
+.messages-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message-bubble {
+  max-width: 75%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.sent {
+  align-self: flex-end;
+  background: var(--primary-color);
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+.received {
+  align-self: flex-start;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-bottom-left-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input-area {
+  padding: 10px;
+  background: var(--card-bg);
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid var(--border-color);
+}
+.chat-input-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+.chat-input-area button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.empty-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+/* --- MOBILE RESPONSIVE CSS --- */
+@media (max-width: 900px) {
+  .chat-container {
+    width: 100vw;
+    left: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .chat-sidebar {
+    width: 100%;
+    min-width: 100%;
+    border-right: none;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .chat-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    z-index: 20;
+    background: #f0f2f5;
+  }
+
+  .visible-on-mobile {
+    transform: translateX(0) !important;
+  }
+
+  .chat-header {
+    display: flex !important;
+    align-items: center;
+    height: 60px;
+    padding: 0 10px;
+    background: var(--card-bg) !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .back-btn {
+    display: block !important;
+    font-size: 1.5rem;
+    padding: 5px;
+    line-height: 1;
+    cursor: pointer;
+    margin-right: auto !important;
+    color: var(--text-color) !important;
+  }
+
+  .header-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  .chat-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-text h4 {
+    margin-bottom: 2px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .status-text,
+  .typing-text {
+    font-size: 0.75rem;
+    color: #666;
+    display: block !important;
+    white-space: nowrap;
+  }
+
+  
+  .avatar-wrapper {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .online-dot {
+    width: 12px !important;
+    height: 12px !important;
+    bottom: 2px !important;
+    right: 2px !important;
+    border: 2px solid white;
+  }
+
+  .sent,
+  .received {
+    max-width: 150px !important;
+  }
+
+  .chat-input-area input {
+    padding: 8px 15px;
+  }
+
+  .empty-chat {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .sent,
+  .received {
+    max-width: 180px !important;
+  }
+}
+
+[data-theme="dark"] .user-details h4,
+[data-theme="dark"] .header-text h4 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .user-details p,
+[data-theme="dark"] .status-text,
+[data-theme="dark"] .typing-text,
+[data-theme="dark"] .typing-status {
+  color: #b0b3b8 !important;
+}
+
+[data-theme="dark"] .back-btn {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .sidebar-header h3,
+[data-theme="dark"] .user-item h4,
+[data-theme="dark"] .user-item {
+  color: #ffffff !important;
+}

@@ -1,0 +1,156 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  background-color: var(--nav-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-decoration: none;
+  white-space: nowrap; 
+}
+
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  color: var(--text-color); 
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  display: block;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Badge Style */
+.nav-badge {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  background-color: #ff3b30;
+  color: white;
+  font-size: 0.65rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+/* ---  MOBILE RESPONSIVE  --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 18px; 
+  }
+
+  .nav-center {
+    gap: 5px; 
+  }
+
+  .nav-text {
+    display: none;
+  }
+
+  .nav-badge {
+    position: absolute;
+    top: 5px !important;   
+    right: 5px !important; 
+    font-size: 0.6rem;      
+    padding: 2px 4px;
+    min-width: 14px;       
+    text-align: center;
+    border: 1px solid var(--card-bg); 
+  }
+
+  .nav-link {
+    padding: 8px;
+    font-size: 12px; 
+  }
+
+  .nav-right {
+    gap: 8px;
+  }
+
+  .logout-btn {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+
+  .nav-avatar {
+    width: 30px;
+    height: 30px;
+  }
+}

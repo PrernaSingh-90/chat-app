@@ -1,0 +1,165 @@
+.post-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  color: var(--text-color);
+}
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.post-footer { 
+  display: flex; 
+  gap: 15px; 
+  padding-top: 12px; 
+  border-top: 1px solid var(--border-color); 
+  margin-top: 10px; 
+}
+
+.post-footer button {
+  width: auto !important;       
+  background: transparent !important; 
+  color: var(--text-secondary) !important;
+  border: none !important;
+  padding: 5px 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+.post-footer button:hover {
+  background-color: var(--bg-color) !important;
+}
+
+.post-footer button.liked {
+  color: #e91e63 !important;
+}
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.user-info h4 {
+  margin: 0;
+  color: var(--text-color);
+}
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.time {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* 3-Dots Menu Styling */
+.dots-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 0 5px;
+}
+.menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  overflow: hidden;
+}
+.menu-dropdown button {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+.menu-dropdown button:hover {
+  background: var(--bg-color);
+}
+
+.post-text {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+.post-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 5px;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.comments-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.comment {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.comment img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.bubble {
+  background: var(--bg-color);
+  padding: 8px 12px;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+.bubble strong {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.comment-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.comment-input input {
+  flex: 1; 
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  outline: none;
+}
+.comment-input button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
