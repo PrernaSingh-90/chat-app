@@ -77,8 +77,8 @@ const Chat = () => {
     if (isBot && isOnline) {
     setTimeout(async () => {
       let reply = "I am a bit busy, talk later! 👍";
-      if (userText.includes('hi') || userText.includes('hello')) reply = "Hello! 👋 Kaise ho?";
-      else if (userText.includes('kaise')) reply = "Main badhiya hu! Tum sunao?";
+      if (userText.includes('hi') || userText.includes('hello')) reply = "Hello! 👋 How are you?";
+      else if (userText.includes('How')) reply = "I am Fine! and you?";
       else if (userText.includes('bye')) reply = "Bye! Take care. 👋";
       else if (userText.includes('good morning')) reply = "Good Morning! ☀️";
       else if (userText.includes('love')) reply = "Aww, so sweet! ❤️";
