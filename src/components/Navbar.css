@@ -41,6 +41,8 @@
   border-radius: 8px;
   transition: 0.3s;
   position: relative;
+  /* change*/
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -51,25 +53,30 @@
 .nav-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 15px;
+  height: 100%;
 }
 
 .icon-btn {
   background: transparent;
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem; 
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  color: var(--text-color); 
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transform: translateY(-3px); 
 }
 
 .user-menu {
   display: flex;
   align-items: center;
   gap: 10px;
+  height: 100%;
 }
 
 .nav-avatar {
@@ -82,7 +89,11 @@
 }
 
 .logout-btn {
-  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  height: 32px; 
   background-color: #ff4d4d;
   color: white;
   border: none;
@@ -91,6 +102,8 @@
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
+  line-height: 1;
+  transform: translateY(-3px);
 }
 
 /* Badge Style */
@@ -106,51 +119,115 @@
   border: 1px solid white;
 }
 
-/* ---  MOBILE RESPONSIVE  --- */
 @media (max-width: 768px) {
+
   .navbar {
-    padding: 0 10px;
+    padding: 0 8px;
+    overflow-x: hidden;
   }
 
   .logo {
-    font-size: 18px; 
+    font-size: 16px;
   }
 
   .nav-center {
-    gap: 5px; 
+    gap: 4px;
   }
 
   .nav-text {
     display: none;
   }
 
-  .nav-badge {
-    position: absolute;
-    top: 5px !important;   
-    right: 5px !important; 
-    font-size: 0.6rem;      
-    padding: 2px 4px;
-    min-width: 14px;       
-    text-align: center;
-    border: 1px solid var(--card-bg); 
-  }
-
   .nav-link {
-    padding: 8px;
-    font-size: 12px; 
+    padding: 5px;
+    font-size: 11px;
   }
 
   .nav-right {
-    gap: 8px;
+    gap: 4px;
+  }
+
+  .user-menu {
+    gap: 4px;
   }
 
   .logout-btn {
-    padding: 5px 8px;
-    font-size: 0.7rem;
+    height: 20px;
+    padding: 0 8px;
+    font-size: 10px;
+    transform: translateY(-2px);
   }
 
   .nav-avatar {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .icon-btn {
+   transform: translateY(-2px); 
+    font-size: 1.2rem;
+  }
+
+  .nav-badge {
+    top: 4px;
+    right: 4px;
+    font-size: 0.55rem;
+    padding: 1px 4px;
+    min-width: 14px;
+    text-align: center;
+    border: 1px solid var(--card-bg);
+  }
+}
+
+/* -------- EXTRA SMALL DEVICES -------- */
+
+@media (max-width: 400px) {
+
+  .navbar {
+    padding: 0 5px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .nav-center {
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 3px;
+    font-size: 9px;
+    gap: 2px;
+  }
+
+  .nav-right {
+    gap: 2px;
+  }
+
+  .user-menu {
+    gap: 2px;
+  }
+
+  .logout-btn {
+    padding: 2px 5px;
+    font-size: 0.5rem;
+  }
+
+  .nav-avatar {
+    width: 25px;
+    height: 25px;
+  }
+
+  .icon-btn {
+    font-size: 1rem;
+    padding: 2px;
+  }
+
+  .nav-badge {
+    top: 3px;
+    right: 2px;
+    font-size: 0.5rem;
+    padding: 1px 3px;
   }
 }
