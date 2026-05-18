@@ -47,6 +47,7 @@ const Chat = () => {
       });
     });
     return () => unsub();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedUser]);
 
   // 3. Auto Scroll

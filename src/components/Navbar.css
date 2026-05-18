@@ -103,7 +103,7 @@
   cursor: pointer;
   white-space: nowrap;
   line-height: 1;
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
 /* Badge Style */
@@ -155,7 +155,7 @@
     height: 20px;
     padding: 0 8px;
     font-size: 10px;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
   }
 
   .nav-avatar {
